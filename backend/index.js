@@ -1,11 +1,13 @@
 import express from 'express'
 import dotenv from 'dotenv'
+import { connectDB } from './db/index.js';
 
 const app = express()
-dotenv.config()
+
 
 app.use(express.json());
 
+connectDB()
 
 app.get('/', (req, res) => {
   res.send(' Server is Running!');
